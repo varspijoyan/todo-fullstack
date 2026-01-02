@@ -1,5 +1,7 @@
-Todo 
+# Todo fullstack website
 
+- Used Typescript + Nest js + Typeorm for backend
+- Used React js + Typescript for frontend
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
