@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSourceOptions } from 'typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { AppService } from './app.service';
           migrations: [__dirname + '/migrations/*{.ts,.js}'],
         }) as DataSourceOptions,
     }),
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
