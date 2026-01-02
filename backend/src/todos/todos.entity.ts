@@ -1,4 +1,11 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Users } from 'src/users/users.entity';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity('todos')
 export class Todos {
@@ -14,6 +21,10 @@ export class Todos {
   @Column({ default: false })
   is_completed: boolean;
 
+  @ManyToOne(() => Users, (user) => user.todos, { onDelete: 'CASCADE' })
+  @JoinColumn({ name: 'users_id' })
+  user: Users;
+  
   @Column({ default: false })
   is_active: boolean;
 

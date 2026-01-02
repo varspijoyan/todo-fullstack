@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Todos } from 'src/todos/todos.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('users')
 export class Users {
@@ -25,6 +26,9 @@ export class Users {
 
   @Column({ default: false })
   is_active: boolean;
+
+  @OneToMany(() => Todos, (todo) => todo.user)
+  todos: Todos[];
 
   @Column({ default: false })
   is_updated: boolean;
