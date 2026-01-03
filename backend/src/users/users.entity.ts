@@ -1,4 +1,4 @@
-import { Todos } from 'src/todos/todos.entity';
+import { Todos } from '../todos/todos.entity';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('users')
